@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { kanit } from "./fonts";
-import "./globals.css"; 
-
+import { kanit } from "../fonts";
+import "../globals.css"; 
+import AppHeader from "@/components/app/AppHeader";
 
 
 export const metadata: Metadata = {
-  title: "juon",
-  description: "juON",
+  title: "juon_IT_test",
+  description: "IT Support",
 };
 
-export default function RootLayout({
+export default function FrontLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
+        <AppHeader/>
         {children}
       </body>
     </html>
