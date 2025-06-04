@@ -8,12 +8,13 @@ export default function Contact() {
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <form className="flex flex-col gap-4">
         <label className="flex flex-col gap-1">
-          <span className={`${kanit.className} text-2xl`}>ชื่อ</span>
+          <span className={`${kanit.className} text-2xl text-amber-600`}>ชื่อ</span>
           <input
             type="text"
             name="name"
-            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-foreground"
+            className="border border-amber-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50 placeholder:text-amber-300"
             required
+            placeholder="กรอกชื่อของคุณ"
           />
         </label>
         <label className="flex flex-col gap-1">
@@ -21,8 +22,9 @@ export default function Contact() {
           <input
             type="email"
             name="email"
-            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-foreground"
+            className="border border-amber-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50 placeholder:text-amber-300"
             required
+            placeholder="กรอกอีเมลของคุณ"
           />
         </label>
         <label className="flex flex-col gap-1">
@@ -30,8 +32,9 @@ export default function Contact() {
           <textarea
             name="message"
             rows={5}
-            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-foreground"
+            className="border border-amber-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50 placeholder:text-amber-300"
             required
+            placeholder="กรอกข้อความของคุณ"
           />
         </label>
         <div className="justify-start flex w-full " >
