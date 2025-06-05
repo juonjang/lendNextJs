@@ -1,6 +1,8 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { kanit, k2d} from "../fonts";
+import { kanit,k2d } from "@/app/fonts";
+
 
 export default function Contact() {
   return (

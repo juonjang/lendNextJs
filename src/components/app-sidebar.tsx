@@ -3,26 +3,30 @@
 import * as React from "react"
 import {
   IconCamera,
-  IconChartBar,
   IconDashboard,
-  IconDatabase,
+
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
-  IconFolder,
+
   IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
   IconReport,
   IconSearch,
   IconSettings,
   IconUsers,
+  IconTicket,
+  IconHeartRateMonitor,
+  IconAlertCircle,
 } from "@tabler/icons-react"
+import { BsPersonRolodex } from "react-icons/bs"
+import { FaComputer } from "react-icons/fa6";
+import { GiServerRack } from "react-icons/gi";
 
 import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { NavAnalytics } from "@/components/nav-anlytisc"
 import {
   Sidebar,
   SidebarContent,
@@ -33,10 +37,12 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+
+
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "JuOn",
+    email: "JuOn@gmail.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
@@ -46,19 +52,19 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
+      title: "Ticket Queue",
       url: "#",
-      icon: IconListDetails,
+      icon: IconTicket,
     },
     {
-      title: "Analytics",
+      title: "Live Monitor",
       url: "#",
-      icon: IconChartBar,
+      icon: IconHeartRateMonitor ,
     },
     {
-      title: "Projects",
+      title: "แจ้งเตือน",
       url: "#",
-      icon: IconFolder,
+      icon: IconAlertCircle,
     },
     {
       title: "Team",
@@ -133,19 +139,43 @@ const data = {
   ],
   documents: [
     {
-      name: "Data Library",
+      title: "อุปกรณ์ IT",
+      name: "อุปกรณ์ IT",
       url: "#",
-      icon: IconDatabase,
+      icon: FaComputer,
     },
     {
-      name: "Reports",
+      title: "ซอฟต์แวร์ และ โปรแกรม",
+      name: "ซอฟต์แวร์ และ โปรแกรม",
       url: "#",
       icon: IconReport,
     },
-    {
-      name: "Word Assistant",
+    { title: "vander",
+      name: "vander",
       url: "#",
-      icon: IconFileWord,
+      icon: BsPersonRolodex,
+    },
+    { title: "ข้อมูล Server",
+      name: "ข้อมูล Server",
+      url: "#",
+      icon: GiServerRack,
+    },
+  ],
+  analytics: [
+    { title: "ประสิทธิภาพการทำงาน",
+      name: "ประสิทธิภาพการทำงาน",
+      url: "#",
+      icon: FaComputer,
+    },
+    { title: "ติดตาม SLA",
+      name: "ติดตาม SLA",
+      url: "#",
+      icon: IconReport,
+    },
+    { title: "รายงาน",
+      name: "รายงาน",
+      url: "#",
+      icon: BsPersonRolodex,
     },
   ],
 }
@@ -162,7 +192,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">IT Manager</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -170,8 +200,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        <NavDocuments items={data.documents}   />
+        <NavAnalytics items={data.analytics}  />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
+       
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
